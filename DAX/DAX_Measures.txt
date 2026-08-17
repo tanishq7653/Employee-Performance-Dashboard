@@ -1,0 +1,29 @@
+Total Employees =
+DISTINCTCOUNT(employees[Employee_ID])
+
+Total Attrition =
+CALCULATE([Total Employees], employees[Attrition] = "Yes")
+
+Attrition Rate % =
+DIVIDE([Total Attrition], [Total Employees], 0)
+
+Average Salary =
+AVERAGE(employees[Monthly_Salary])
+
+Average Performance =
+AVERAGE(employees[Performance_Score])
+
+Average Satisfaction =
+AVERAGE(employees[Job_Satisfaction])
+
+Average Work Life Balance =
+AVERAGE(employees[Work_Life_Balance])
+
+Overtime Attrition =
+CALCULATE([Total Attrition], employees[Overtime] = "Yes")
+
+Low Satisfaction Attrition =
+CALCULATE([Total Attrition], employees[Job_Satisfaction] <= 2)
+
+Average Training Hours =
+AVERAGE(employees[Training_Hours])
